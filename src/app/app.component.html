@@ -54,10 +54,10 @@
     </div>
     <div class="col" *ngIf="cart">
       <ng-container *ngFor="let item of cart.items">
-        <p>{{item.amount}} {{item.name}}: {{item.price}} </p>
+        <p>{{item.amount}} {{item.name}}: {{(item.price*item.amount).toFixed(2)}} </p>
       </ng-container>
-      <p>Total Cart: {{ cart.total }}</p>
-      <p>Total Taxes:{{ cart.payedTax }}</p>
+      <p>Total Taxes:{{ cart.payedTax.toFixed(2) }}</p>
+      <p>Total Cart: {{ cart.total.toFixed(2) }}</p>
     </div>
   </div>
 </div>
